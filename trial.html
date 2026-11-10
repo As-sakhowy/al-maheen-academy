@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a free introductory Quran, Tajweed, Arabic or Islamic Studies session with Al-Maheen Academy.">
+  <meta name="theme-color" content="#123f31"><title>Book a Free Trial | Al-Maheen Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="register.css"><link rel="stylesheet" href="trial.css">
+</head>
+<body class="registration-page">
+<header>
+  <nav class="nav registration-nav">
+    <a href="index.html#home" class="brand"><img class="mark" src="assets/logo-tree.png" alt="Al-Maheen Academy tree logo"><span>Al-Maheen Academy</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#home">Home</a><a href="index.html#about">About Us</a><a href="index.html#courses">Courses</a><a href="pricing.html">Pricing</a><a href="trial.html" class="nav-cta">Register / Free Trial</a><a href="index.html#contact">Contact Us</a>
+    </div>
+  </nav>
+</header>
+<main class="registration-main">
+  <section class="registration-intro"><span class="registration-kicker">EMBARK ON A JOURNEY OF LEARNING</span><h1>Request your free trial</h1><p>Tell us about the learner and suggest a convenient time. Your request will be reviewed by the academy. Your trial is not confirmed until we contact you.</p></section>
+  <form id="trialForm" class="registration-form" novalidate>
+    <section class="form-section">
+      <div class="section-heading"><span class="section-number">01</span><div><h2>Your contact details</h2><p>If you are the learner, enter your own details. If registering someone else, enter the parent/guardian or contact person details.</p></div></div>
+      <div class="form-grid">
+        <label class="field"><span>Your first name *</span><input name="guardianFirstName" required maxlength="70" autocomplete="given-name"></label>
+        <label class="field"><span>Your last name *</span><input name="guardianLastName" required maxlength="70" autocomplete="family-name"></label>
+        <label class="field"><span>Email address *</span><input type="email" name="guardianEmail" required maxlength="160" autocomplete="email" placeholder="you@example.com"></label>
+        <label class="field"><span>WhatsApp number *</span><input type="tel" name="guardianPhone" required maxlength="30" autocomplete="tel" placeholder="Include country code"></label>
+        <label class="field"><span>Student's country of residence *</span><input name="country" required maxlength="80" autocomplete="country-name" placeholder="e.g. United Kingdom"></label>
+        <label class="field"><span>Who is the registration for? *</span><select name="relationship" id="trialRelationship" required><option value="">Choose one</option><option value="Self">Myself</option><option value="Parent">My child (I am the parent)</option><option value="Guardian">My child (I am the guardian)</option><option value="Other family member">Another family member</option></select></label>
+      </div>
+    </section>
+    <section class="form-section">
+      <div class="section-heading"><span class="section-number">02</span><div><h2>Learner details</h2><p>Each student may receive one free trial. If you selected Myself, your contact name will be used as the learner name.</p></div></div>
+      <div class="form-grid">
+        <div id="trialStudentNameFields" class="form-grid field-full"><label class="field"><span>Student first name *</span><input name="studentFirstName" id="trialStudentFirstName" required maxlength="70"></label><label class="field"><span>Student last name *</span><input name="studentLastName" id="trialStudentLastName" required maxlength="70"></label></div>
+        <label class="field"><span>Age group *</span><select name="ageGroup" required><option value="">Choose one</option><option>Child (4–12)</option><option>Teenager (13–17)</option><option>Adult (18+)</option></select></label>
+        <label class="field field-full"><span>Current learning level *</span><select name="level" required><option value="">Choose the closest match</option><option>Complete beginner</option><option>Recognises Arabic letters, learning to join them</option><option>Can read words but needs practice</option><option>Reads Quran and wants to improve Tajweed</option><option>Reads fluently and wants memorisation support</option><option>Not applicable / interested in another course</option></select></label>
+      </div>
+    </section>
+    <section class="form-section">
+      <div class="section-heading"><span class="section-number">03</span><div><h2>Choose a programme</h2><p>Select at least one programme and up to four.</p></div></div>
+      <div class="course-counter" aria-live="polite"><span id="courseCount">0 of 4 selected</span><span class="counter-track"><span id="counterFill"></span></span></div>
+      <div class="course-grid" id="courseGrid">
+        <label class="course-card"><input type="checkbox" name="courses" value="Quran Reading"><span class="course-check">✓</span><span class="course-icon">۞</span><span class="course-title">Quran Reading</span><span class="course-description">Build confidence reading Quranic words.</span></label>
+        <label class="course-card"><input type="checkbox" name="courses" value="Quran Memorisation"><span class="course-check">✓</span><span class="course-icon">حفظ</span><span class="course-title">Quran Memorisation</span><span class="course-description">Memorisation and revision with guidance.</span></label>
+        <label class="course-card"><input type="checkbox" name="courses" value="Tajweed"><span class="course-check">✓</span><span class="course-icon">تجويد</span><span class="course-title">Tajweed</span><span class="course-description">Improve pronunciation and recitation.</span></label>
+        <label class="course-card"><input type="checkbox" name="courses" value="Arabic Language"><span class="course-check">✓</span><span class="course-icon">العربية</span><span class="course-title">Arabic Language</span><span class="course-description">Develop Arabic reading and language skills.</span></label>
+        <label class="course-card"><input type="checkbox" name="courses" value="Islamic Studies"><span class="course-check">✓</span><span class="course-icon">علم</span><span class="course-title">Islamic Studies</span><span class="course-description">Learn essential Islamic knowledge.</span></label>
+        <label class="course-card"><input type="checkbox" name="courses" value="Islamic Manners and Character"><span class="course-check">✓</span><span class="course-icon">أدب</span><span class="course-title">Islamic Manners and Character</span><span class="course-description">Develop good manners and character.</span></label>
+        <label class="course-card"><input type="checkbox" name="courses" value="Duas and Hadith"><span class="course-check">✓</span><span class="course-icon">دعاء</span><span class="course-title">Duas and Hadith</span><span class="course-description">Learn supplications and Hadith with meaning.</span></label>
+      </div><p id="courseError" class="field-error" role="alert" hidden>Select at least one programme and no more than four.</p>
+    </section>
+    <section class="form-section">
+      <div class="section-heading"><span class="section-number">04</span><div><h2>Preferred trial date and time</h2><p>Choose the student's time zone. We will show the equivalent time in Lagos.</p></div></div>
+      <div class="form-grid">
+        <label class="field field-full"><span>Student's time zone *</span><select id="studentTimeZone" name="studentTimeZone" required><option value="">Loading time zones…</option></select><small>Choose the time zone for the student's location, not necessarily the parent's current location.</small></label>
+        <label class="field"><span>Preferred trial date *</span><input type="date" id="trialDate" name="trialDate" required></label>
+        <label class="field"><span>Preferred trial start time *</span><input type="time" id="trialTime" name="trialTime" required></label>
+        <label class="field"><span>Trial duration *</span><select name="trialDuration" required><option value="20">20 minutes</option><option value="30" selected>30 minutes</option></select></label>
+        <div class="field field-full timezone-preview" aria-live="polite">
+          <div class="timezone-preview-heading">Time comparison</div>
+          <div class="timezone-cards"><div><small>Student's local time</small><strong id="studentTimeDisplay">Select a date and time</strong><span id="studentZoneDisplay">Your selected time zone</span></div><div><small>Al-Maheen Academy time</small><strong id="academyTimeDisplay">Waiting for selection</strong><span>Africa/Lagos · WAT (UTC+1)</span></div></div>
+          <p id="timeNotice" class="time-notice">Both times update when you change the date, time or time zone. This is a preferred time request, not a confirmed booking.</p>
+        </div>
+        <label class="field field-full"><span>Other suitable times or notes (optional)</span><textarea name="notes" rows="3" maxlength="1000" placeholder="Tell us if you are flexible or have another suitable time."></textarea></label>
+      </div>
+    </section>
+    <section class="form-section">
+      <label class="consent-choice"><input type="checkbox" name="consent" required><span>I confirm that the information is accurate and agree that Al-Maheen Academy may contact me about this trial request. I understand that submitting this form does not confirm an appointment.</span></label>
+      <div id="formMessage" class="form-message" role="alert" hidden></div>
+      <div id="successPanel" class="success-panel" hidden><span class="success-mark">✓</span><h3>Your trial request has been received</h3><p>Your request is <strong>pending academy approval</strong>. We will contact you to confirm or suggest another time.</p><p>Your student reference ID</p><strong id="registrationId" class="registration-id"></strong><a id="whatsappContinue" class="btn btn-primary" href="#" target="_blank" rel="noopener">Continue to WhatsApp</a><p class="small-note">After your request is saved, WhatsApp opens with a prepared message. Please press Send. Your trial is not booked until the academy confirms it.</p></div>
+      <button id="submitButton" class="btn btn-primary submit-button" type="submit">Request Free Trial <span aria-hidden="true">→</span></button>
+      <p class="privacy-note">No payment is required for a free trial. Please do not submit passwords or payment card details.</p>
+    </section>
+  </form>
+</main>
+<footer class="registration-footer"><a href="index.html">Al-Maheen Academy</a><span>EMBARK ON A JOURNEY OF LEARNING</span></footer>
+<script src="timezone-utils.js" defer></script><script src="trial.js" defer></script><script>document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("navToggle"),n=document.getElementById("navLinks");if(t&&n)t.addEventListener("click",()=>{const open=n.classList.toggle("open");t.setAttribute("aria-expanded",String(open));});n?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>n.classList.remove("open")));});</script>
+</body></html>

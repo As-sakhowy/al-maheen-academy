@@ -1,0 +1,96 @@
+:root{--reg-green:#123f31;--reg-green-dark:#0a2d23;--reg-gold:#d8b64a;--reg-cream:#fbf8ef;--reg-ink:#202820;--reg-muted:#66716a;--reg-border:#e1e6de}
+.registration-page{background:#f7f6f0;color:var(--reg-ink);font-family:Inter,Arial,sans-serif;min-height:100vh}
+.registration-nav{max-width:1180px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.registration-nav .brand{display:flex;align-items:center;gap:10px;color:var(--reg-green);font-weight:700;text-decoration:none}
+.registration-nav .mark{width:43px;height:43px;object-fit:contain}
+.back-link{color:var(--reg-green);font-size:.9rem;text-decoration:none;font-weight:600}
+.registration-main{width:min(960px,calc(100% - 32px));margin:30px auto 64px}
+.registration-intro{text-align:center;max-width:720px;margin:0 auto 28px;padding:18px 12px}
+.registration-kicker{font-size:.75rem;letter-spacing:.16em;color:#96751b;font-weight:700}
+.registration-intro h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.03;color:var(--reg-green);margin:12px 0}
+.registration-intro p{color:var(--reg-muted);line-height:1.75;margin:0 auto;max-width:650px}
+.registration-form{background:#fff;border:1px solid var(--reg-border);border-radius:22px;box-shadow:0 16px 48px rgba(20,45,31,.07);overflow:hidden}
+.form-section{padding:clamp(22px,4vw,38px);border-bottom:1px solid var(--reg-border)}
+.form-section:last-child{border-bottom:0}
+.section-heading{display:flex;gap:15px;align-items:flex-start;margin-bottom:25px}
+.section-number{display:grid;place-items:center;flex:0 0 39px;height:39px;border-radius:12px;background:#f6efd8;color:#806314;font-size:.83rem;font-weight:800}
+.section-heading h2{font-size:1.2rem;color:var(--reg-green);margin:2px 0 6px}
+.section-heading p{font-size:.88rem;color:var(--reg-muted);margin:0;line-height:1.5}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 17px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0;border:0;padding:0;margin:0}
+.field>span,.field legend{font-size:.88rem;font-weight:650;color:#303b33}
+.field input:not([type=checkbox]):not([type=radio]),.field select,.field textarea{width:100%;box-sizing:border-box;border:1px solid #d8ded7;border-radius:10px;background:#fff;padding:13px 14px;font:inherit;font-size:.92rem;color:var(--reg-ink);outline:none;min-height:48px;transition:border-color .18s,box-shadow .18s}
+.field textarea{resize:vertical;min-height:95px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#2d7257;box-shadow:0 0 0 3px rgba(45,114,87,.12)}
+.field small{font-size:.76rem;color:var(--reg-muted);line-height:1.45}
+.field-full{grid-column:1/-1}
+.choice-row{display:flex;flex-wrap:wrap;gap:10px}
+.radio-choice{display:flex;align-items:center;gap:8px;border:1px solid var(--reg-border);border-radius:10px;padding:11px 13px;cursor:pointer;font-size:.85rem;line-height:1.35;min-height:22px}
+.radio-choice:has(input:checked){border-color:var(--reg-green);background:#f0f6f1;color:var(--reg-green)}
+.radio-choice input,.consent-choice input{accent-color:var(--reg-green);width:17px;height:17px;flex:0 0 auto}
+.course-counter{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:-6px 0 17px;color:var(--reg-green);font-weight:700;font-size:.83rem}
+.counter-track{width:140px;height:6px;background:#e8eee8;border-radius:99px;overflow:hidden}.counter-track span{display:block;height:100%;width:0;background:var(--reg-green);border-radius:99px;transition:width .2s}
+.course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.course-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;border:1px solid var(--reg-border);border-radius:14px;padding:19px 18px;min-height:165px;cursor:pointer;background:#fff;transition:border-color .18s,background .18s,transform .18s;box-sizing:border-box}
+.course-card:hover{border-color:#9db5a2;transform:translateY(-2px)}
+.course-card:has(input:checked){border:1.5px solid var(--reg-green);background:#f3f8f3;box-shadow:0 0 0 2px rgba(18,63,49,.04)}
+.course-card input{position:absolute;top:15px;right:15px;width:19px;height:19px;accent-color:var(--reg-green);cursor:pointer}
+.course-check{position:absolute;top:14px;right:14px;display:none;background:var(--reg-green);color:#fff;width:21px;height:21px;border-radius:50%;place-items:center;font-size:.75rem;font-weight:800}
+.course-card:has(input:checked) .course-check{display:grid}.course-card:has(input:checked) input{opacity:0}
+.course-icon{display:grid;place-items:center;min-height:34px;color:#8a6d1b;font-size:1.15rem;font-weight:700;background:#f8f1d9;padding:0 9px;border-radius:8px}
+.course-title{font-size:.97rem;font-weight:750;color:var(--reg-green);padding-right:20px;line-height:1.35}
+.course-description{font-size:.81rem;line-height:1.55;color:var(--reg-muted)}
+.field-error{color:#a12c24;font-size:.85rem;margin:13px 0 0}.form-message{border-radius:10px;padding:13px 15px;margin:16px 0;font-size:.9rem;line-height:1.5}.form-message.error{background:#fff0ef;color:#8d241e;border:1px solid #f0c9c5}.form-message.info{background:#eef6ef;color:var(--reg-green);border:1px solid #cfe2d2}
+.consent-choice{display:flex;align-items:flex-start;gap:11px;color:#47534b;font-size:.86rem;line-height:1.6;cursor:pointer}.consent-choice input{margin-top:3px}
+.submit-button{display:flex;justify-content:center;align-items:center;gap:12px;width:100%;margin-top:22px;border:0;cursor:pointer;font:inherit;font-weight:750;padding:15px 20px;border-radius:10px;background:var(--reg-green);color:white;min-height:52px;transition:background .2s,transform .2s}
+.submit-button:hover{background:var(--reg-green-dark);transform:translateY(-1px)}.submit-button:disabled{opacity:.65;cursor:wait;transform:none}
+.privacy-note,.small-note{font-size:.76rem;color:var(--reg-muted);line-height:1.6;text-align:center;margin:13px auto 0;max-width:620px}
+.success-panel{text-align:center;padding:25px 18px;margin-top:20px;border:1px solid #c9dfce;border-radius:15px;background:#f2f8f2}.success-mark{display:grid;place-items:center;width:42px;height:42px;margin:0 auto 10px;background:var(--reg-green);color:#fff;border-radius:50%;font-weight:800}.success-panel h3{color:var(--reg-green);font-size:1.35rem;margin:8px 0}.success-panel p{color:#536057;line-height:1.65;font-size:.9rem}.registration-id{display:inline-block;padding:9px 13px;background:white;border:1px dashed #9bbba1;border-radius:8px;color:var(--reg-green);font-size:1.15rem;letter-spacing:.04em}.success-panel .btn{display:inline-flex;justify-content:center;text-decoration:none;background:#18764b;color:white;padding:13px 20px;border-radius:9px;font-weight:700;margin-top:7px}.honeypot{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.registration-footer{display:flex;flex-direction:column;gap:7px;align-items:center;padding:25px 15px 35px;color:#6b756d;font-size:.78rem}.registration-footer a{font-weight:750;color:var(--reg-green);text-decoration:none}.registration-footer span{letter-spacing:.1em;font-size:.67rem}
+[hidden]{display:none!important}
+@media(max-width:640px){.registration-main{width:min(100% - 20px,960px);margin-top:16px}.registration-nav{padding:12px 16px}.registration-nav .brand{font-size:.9rem}.registration-nav .mark{width:36px;height:36px}.back-link{font-size:.78rem}.registration-intro{padding:12px 6px;margin-bottom:16px}.registration-intro p{font-size:.9rem}.form-section{padding:22px 17px}.form-grid,.course-grid{grid-template-columns:1fr}.field-full{grid-column:auto}.course-card{min-height:0;padding:16px}.course-description{max-width:95%}.choice-row{gap:8px}.radio-choice{padding:10px;font-size:.81rem}.section-heading{gap:11px}.section-heading h2{font-size:1.1rem}.counter-track{width:100px}}
+
+.registration-nav-links{display:flex;align-items:center;gap:18px}.registration-nav-links>a:first-child{color:#174c3a;font-weight:700;text-decoration:none;font-size:.9rem}
+.fee-estimate{background:#f1f5ef;border:1px solid #d9e5d8;border-radius:12px;padding:16px;display:grid;gap:5px}.fee-estimate>span{font-size:.82rem;color:#617168}.fee-estimate strong{font-size:1.8rem;color:#123f31}.fee-estimate small{font-size:.75rem;color:#68766e;line-height:1.5}
+@media(max-width:560px){.registration-nav-links{gap:10px}.registration-nav-links>a{font-size:.78rem}}
+
+/* Shared navigation and time-zone comparison */
+.registration-nav .nav-links { color:#123f31; font-size:.88rem; gap:clamp(9px,1.2vw,18px); }
+.registration-nav .nav-links a { color:#123f31; white-space:nowrap; }
+.registration-nav .nav-links .nav-cta { color:#123f31; }
+.registration-nav .nav-toggle { color:#123f31; }
+.conditional-learner-fields { padding:0; }
+.timezone-preview { border:1px solid rgba(18,63,49,.15); border-radius:14px; padding:18px; background:#f7f8f5; }
+.timezone-preview-heading { font-weight:700; color:#123f31; margin-bottom:12px; }
+.timezone-cards { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.timezone-cards > div { display:flex; flex-direction:column; gap:6px; padding:14px; border-radius:10px; background:#fff; }
+.timezone-cards small { color:#68736d; }
+.timezone-cards strong { color:#123f31; line-height:1.4; }
+.timezone-cards span { color:#68736d; font-size:.83rem; overflow-wrap:anywhere; }
+.time-notice { margin:12px 0 0; color:#52665c; font-size:.88rem; line-height:1.55; }
+.time-notice.warning { color:#9b4c25; }
+@media(max-width:820px) { .registration-nav .nav-links { background:#fff; border-top:1px solid #e1e6de; box-shadow:0 10px 20px rgba(0,0,0,.1); } .registration-nav .nav-links a { color:#123f31; } .timezone-cards { grid-template-columns:1fr; } }
+
+/* Header navigation contrast: keep navigation text white on the academy's dark-green header. */
+.registration-nav .brand,
+.registration-nav .nav-links,
+.registration-nav .nav-links a,
+.registration-nav .nav-toggle {
+  color: #fff;
+}
+.registration-nav .nav-links a:not(.nav-cta):hover,
+.registration-nav .nav-links a:not(.nav-cta):focus-visible {
+  color: var(--gold-bright, #f0cf63);
+}
+.registration-nav .nav-links .nav-cta {
+  color: var(--green-deep, #0b3d2e) !important;
+}
+@media (max-width: 820px) {
+  .registration-nav .nav-links {
+    background: var(--green-deep, #0b3d2e);
+    border-top: 1px solid rgba(255,255,255,.16);
+  }
+  .registration-nav .nav-links a:not(.nav-cta) { color: #fff; }
+  .registration-nav .nav-links a:not(.nav-cta):hover,
+  .registration-nav .nav-links a:not(.nav-cta):focus-visible { color: var(--gold-bright, #f0cf63); }
+}
