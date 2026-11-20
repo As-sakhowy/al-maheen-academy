@@ -108,3 +108,7 @@ The trial API continues to write through AF. The general registration API writes
 ### WhatsApp redirect behaviour
 
 The current public website contact number is configured in `register.js` and `trial.js` as `2348143160876`. Confirm this is the correct Al-Maheen Academy WhatsApp Messenger number before production deployment. After the server confirms the row was saved, the form redirects to `https://wa.me/` with a prefilled message. WhatsApp does not send the message automatically; the parent/student must press Send.
+
+## Admin dashboard
+
+See `ADMIN-SETUP.md` for the private Supabase-backed administrator dashboard setup, required environment variables, local testing and current integration limits.

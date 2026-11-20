@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0B3D2E">
+  <title>Admin Dashboard | Al-Maheen Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="app-body">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="side-brand" href="../index.html"><img src="../assets/logo-tree.png"
+          alt=""><span>Al-Maheen<br><small>ACADEMY ADMIN</small></span></a>
+      <nav class="side-nav" aria-label="Admin navigation">
+        <button class="nav-item active" data-view="overview">▦ <span>Overview</span></button>
+        <button class="nav-item" data-view="students">♙ <span>Students</span></button>
+        <button class="nav-item" data-view="trials">◷ <span>Free trials</span><b id="trialBadge" class="nav-badge"
+            hidden>0</b></button>
+        <button class="nav-item" data-view="registrations">▤ <span>Registrations</span></button>
+        <button class="nav-item" data-view="classes">▣ <span>Classes</span></button>
+        <button class="nav-item" data-view="teachers">♧ <span>Teachers</span></button>
+        <button class="nav-item" data-view="payments">＄ <span>Payments</span></button>
+        <button class="nav-item" data-view="invoices">▤ <span>Invoices</span></button>
+        <button class="nav-item" data-view="courses">▧ <span>Courses</span></button>
+        <button class="nav-item" data-view="reports">▥ <span>Reports</span></button>
+      </nav>
+      <div class="sidebar-bottom"><a href="../index.html">↗ View public website</a><button id="logoutButton"
+          class="logout-link">↪ Sign out</button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div>
+          <p class="eyebrow">AL-MAHEEN ACADEMY</p>
+          <h1 id="pageTitle">Overview</h1>
+        </div>
+        <div class="top-user"><span class="avatar">A</span><span id="adminName">Administrator</span></div>
+      </header>
+      <div class="content-area">
+        <section id="overviewView" class="view active">
+          <div class="welcome-row">
+            <div>
+              <h2>Assalamu Alaikum</h2>
+              <p class="muted">Here's what's happening at your Academy.</p>
+            </div><button class="outline-btn" id="refreshOverview">↻ Refresh</button>
+          </div>
+          <div class="stat-grid">
+            <article class="stat-card"><span class="stat-icon">♙</span>
+              <p>Total students</p><strong id="statStudents">—</strong><small>Registered student records</small>
+            </article>
+            <article class="stat-card"><span class="stat-icon gold">◷</span>
+              <p>Pending free trials</p><strong id="statTrials">—</strong><small>Awaiting your review</small>
+            </article>
+            <article class="stat-card"><span class="stat-icon">▣</span>
+              <p>Active classes</p><strong id="statClasses">—</strong><small>Recurring schedules</small>
+            </article>
+            <article class="stat-card"><span class="stat-icon">♧</span>
+              <p>Active teachers</p><strong id="statTeachers">—</strong><small>Academy teaching team</small>
+            </article>
+          </div>
+          <div class="finance-grid">
+            <article class="panel finance-panel">
+              <div>
+                <p class="eyebrow">PAYMENTS RECEIVED</p><strong id="statCollected">$0.00</strong><small>Based on
+                  successful payment records</small>
+              </div><span class="finance-mark">↗</span>
+            </article>
+            <article class="panel finance-panel">
+              <div>
+                <p class="eyebrow">OUTSTANDING BALANCE</p><strong id="statOutstanding">$0.00</strong><small>Across
+                  recorded invoices</small>
+              </div><span class="finance-mark gold">＄</span>
+            </article>
+          </div>
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Recent free trial requests</h2>
+                <p class="muted">The latest applications submitted to the database.</p>
+              </div><button class="text-btn" data-open-view="trials">View all →</button>
+            </div>
+            <div id="recentTrials" class="table-wrap">
+              <p class="empty-state">Loading trial requests…</p>
+            </div>
+          </article>
+          <div class="notice"><strong>Setup reminder</strong><span>Dashboard data appears after the Supabase browser
+              settings and Vercel server environment variables are configured. Public registration form integration is a
+              separate connection step.</span></div>
+        </section>
+        <section id="dataView" class="view">
+          <div class="section-toolbar">
+            <div>
+              <h2 id="sectionHeading">Students</h2>
+              <p class="muted" id="sectionDescription">Manage Academy records.</p>
+            </div>
+            <div class="toolbar-actions"><input id="tableSearch" type="search" placeholder="Search records…"
+                aria-label="Search records"><button id="addRecordButton" class="primary-btn" hidden>＋ Add
+                record</button><button id="refreshTable" class="outline-btn">↻ Refresh</button></div>
+          </div>
+          <div class="panel">
+            <div id="dataTable" class="table-wrap">
+              <p class="empty-state">Choose a section to load records.</p>
+            </div>
+          </div>
+        </section>
+        <section id="reportsView" class="view">
+          <div class="welcome-row">
+            <div>
+              <h2>Academy reports</h2>
+              <p class="muted">A summary of the records currently stored in Supabase.</p>
+            </div><button class="outline-btn" id="refreshReports">↻ Refresh</button>
+          </div>
+          <div class="report-grid">
+            <article class="panel">
+              <p class="eyebrow">STUDENT ENROLMENTS</p><strong id="reportEnrollments">—</strong><small>Course enrolment
+                records</small>
+            </article>
+            <article class="panel">
+              <p class="eyebrow">SUCCESSFUL PAYMENTS</p><strong id="reportRevenue">—</strong><small>Recorded payment
+                total</small>
+            </article>
+            <article class="panel">
+              <p class="eyebrow">INVOICE BALANCES</p><strong id="reportBalance">—</strong><small>Outstanding
+                amount</small>
+            </article>
+          </div>
+          <p class="report-note">Reports reflect saved records only. No payments are collected by this dashboard until a
+            payment provider is separately integrated.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h2 id="modalTitle">Add record</h2><button id="closeModal" class="icon-btn" aria-label="Close">×</button>
+      </div>
+      <form id="recordForm">
+        <div id="modalFields" class="form-grid"></div>
+        <p id="modalMessage" class="message" role="status"></p>
+        <div class="modal-actions"><button type="button" class="outline-btn" id="cancelModal">Cancel</button><button
+            type="submit" class="primary-btn" id="saveRecord">Save record</button></div>
+      </form>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="trialDetailsModal" hidden>
+  <section
+    class="modal trial-details-content"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="trialDetailsTitle"
+  >
+    <div class="modal-head">
+      <h2 id="trialDetailsTitle">Free Trial Details</h2>
+      <button
+        type="button"
+        class="icon-btn"
+        id="closeTrialDetails"
+        aria-label="Close"
+      >×</button>
+    </div>
+
+    <div id="trialDetailsBody">
+      Loading trial details...
+    </div>
+  </section>
+</div>
+  <div class="modal-backdrop" id="registrationDetailsModal" hidden>
+    <section class="modal trial-details-content" role="dialog" aria-modal="true" aria-labelledby="registrationDetailsTitle">
+      <div class="modal-head">
+        <h2 id="registrationDetailsTitle">Registration Details</h2>
+        <button type="button" class="icon-btn" id="closeRegistrationDetails" aria-label="Close">×</button>
+      </div>
+      <div id="registrationDetailsBody">Loading registration details...</div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

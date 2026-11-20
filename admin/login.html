@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#0B3D2E">
+  <title>Administrator Login | Al-Maheen Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-body">
+  <main class="login-card">
+    <a class="login-brand" href="../index.html"><img src="../assets/logo-tree.png" alt=""><span>Al-Maheen Academy</span></a>
+    <p class="eyebrow">PRIVATE ADMINISTRATION</p><h1>Welcome back</h1><p class="muted">Sign in to manage Academy operations.</p>
+    <form id="loginForm">
+      <label for="email">Administrator email</label><input id="email" type="email" autocomplete="username" required>
+      <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required>
+      <button class="primary-btn full" id="loginButton" type="submit">Sign in securely</button>
+      <p id="loginMessage" class="message" role="status"></p>
+    </form>
+    <a class="back-link" href="../index.html">← Back to public website</a>
+    <p class="login-foot">Access is restricted to approved Academy administrators.</p>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="auth.js"></script>
+</body></html>
